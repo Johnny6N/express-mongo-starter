@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <%- include ('../partials/head.ejs') %>
+</head>
+<body>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="signUpContainer">
+      <div class="">
+
+        <h1>New User</h1>
+        <form action="/users" method="POST">
+          <label for="name">User Name:</label>
+          <input type="text" name="username" required/><br><br>
+          <label for="color">Password:</label>
+          <input type="password" name="password" />
+          <br><br>
+          <input type="submit" value="Submit">
+          <form>
+          </div>
+          <div class="signUpImg">
+            <img style="width:100%" src="" alt="">
+
+          </div>
+        </div>
+      </body>
+      </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+  <body>
+    <h1>Hello! Welcome to the Rising Light app,</h1>
+    <h1> brought to you by The Illumi-Nation Project!</h1>
+
+    <!-- Have the event name be entered in? -->
+    <h2>Current Woke & Play shop schedule:</h2>
+
+    <div class="currentShops">
+      <ul>
+      <% for (let i = 0; i < shops.length; i++) { %>
+        <div class="eachShop">
+          <li>
+            Shop: <%= shops[i].shop %><br>
+            Host: <%= shops[i].host %><br>
+            Info: <%= shops[i].info %><br>
+            Day: <%= shops[i].day %>, <%= shops[i].date %><br>
+            Time: <%= shops[i].startTime %> to <%= shops[i].endTime %><br>
+            Location: <%= shops[i].location %><br>
+            Price: <%= shops[i].price %><br>
+            <img class="indexShopImgs" src="<%= shops[i].img %>" alt="">
+          </li>
+        </div>
+      <% } %>
+    </ul>
+
+    </div>
+    <div class="organizationDescriptions">
+      <div class="illuminationDescription">
+        <h3>The Illumination Project</h3>
+        <p>We are a St. Petersburg, FL-based federally recognized 501 (c.)(3) not-for-profit organization.</p>
+        <p>Our mission is to offer holistic, experiential education for children and adults related to environmental sustainability, personal growth, and creative self-expression.</p>
+        <p>We are in the development stages of creating a Hands-On Holistic Wellness & Environmental Education Center in St. Petersburg for children and adults.</p>
+        <p>Currently, we have two community outreach programs: Rising Light and Paint at The Patch<p>
+        <a href="#">Learn more about our research!</a>
+      </div>
+      <div class="risingLightDescription">
+        <p>Rising Light is our community outreach program. Our group of volunteers, educators and spiritual leaders travel to music festivals and other events to provide interactive classes and PLAYshops that promote sustainability, social empowerment, community enrichment, and personal growth.</p>
+      </div>
+    </div>
+  </body>
+</html>
