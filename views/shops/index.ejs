@@ -18,7 +18,7 @@
         <div class="eachShop">
             Shop: <%= shops[i].title %><br>
             Host: <%= shops[i].host %><br><br>
-              <img style="width:100%;" src="<%= shops[i].img %>" alt=""><br>
+              <img class="shopImage" src="<%= shops[i].img %>" alt=""><br>
             About: <%= shops[i].shortInfo %><br>
             Day: <%= shops[i].day %>, <%= shops[i].date %><br>
             Time: <%= shops[i].startTime %> to <%= shops[i].endTime %><br>
@@ -30,10 +30,9 @@
 
     </div>
     <h2>Like us on Facebook!<img class="facebookLink" src="https://i.pinimg.com/originals/0d/3b/7a/0d3b7af79ad2b163f759eed5937cd764.png" alt=""> <a href="https://www.facebook.com/RisingLightStPete/"></a></h2>
-    <% if (currentUser && currentUser.role === 'admin') { %>
+
     <button><a href="/shops/new">Create new Woke/Play shop listing</a></button>
     <button><a href="/shops/userindex">User info/permissions</a></button>
-    <% } %>
     <div class="organizationDescriptions">
       <div class="illuminationDescription">
         <div class="illuminationDescription-1"

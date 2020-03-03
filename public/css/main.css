@@ -19,13 +19,14 @@ body {
 
 .navBar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-image: url('https://t4.ftcdn.net/jpg/01/38/69/35/240_F_138693516_xEc0xs2qKXXA1S2rgScAlMtQlRQAozYc.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  font-family: 'Josefin Sans'
 }
 
 .navLinks:link {
@@ -33,12 +34,33 @@ body {
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
   font-size: 1em;
-  border-radius: 10px;
-  margin: 5px 5px;
+  border-radius: 5px;
+  margin: 5px 0px;
   cursor: pointer;
   color: white;
   padding: 2px 5px;
   text-align: center;
+  text-decoration: none;
+}
+
+input[type=submit] {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
+  border: 2px solid black;
+/* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
+  font-size: 0.9em;
+  border-radius: 5px;
+  margin: 5px 0px;
+  cursor: pointer;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  font-family: 'Josefin Sans'
+}
+
+input[type=submit]:hover{
+  color: yellow;
+  font-size: 1.2em;
+  transition: 0.5s;
 }
 
 .navLinks:visited {
@@ -77,9 +99,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
-.navSignIn {
+/* .navSignIn {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -87,7 +109,7 @@ body {
   width: 10%;
   text-align: right;
   margin: 0 5px;
-}
+} */
 
 .facebookLink {
   width: 5%;
@@ -115,11 +137,23 @@ body {
   justify-content: space-between;
   width: 30%;
   background-color: rgba(137, 207, 240, 0.5);
+  border-radius: 20px;
   color: black;
   font-family: 'Indie Flower';
   padding: 5px;
   margin: 5px;
-  text-align: center
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px black;
+}
+
+.shopImage {
+  width: 90%;
+  display: inline-block;
+  margin: auto;
+  border: 1px solid black;
+  box-shadow: 4px 4px 5px black;
+
 }
 
 .illuminationDescription {
@@ -180,5 +214,11 @@ body {
 }
 
 .button {
-  
+
+}
+
+.signUpImg {
+  display: inline-block;
+  border-radius: 50px;
+  margin: auto;
 }

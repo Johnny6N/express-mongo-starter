@@ -3,57 +3,51 @@
 <head>
   <%- include ('../partials/head.ejs') %>
 </head>
+<nav>
+  <div class="navBar">
+    <div class="navImg">
+      <a href="https://www.beaminglove.org/"><img style="border-radius: 20px; width:100%;" src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" style="width:100%;" alt=""></a>
+    </div>
+
+    <div class="navMenu">
+      <div class="navMenuFirstRow">
+
+        <a class="navLinks" href="/shops">Home</a>
+        <a class="navLinks" href="#">Presenters</a>
+        <a class="navLinks" href="https://www.facebook.com/pg/Illumi.Nation.proj/events/?ref=page_internal">Upcoming</a>
+  </div>
+
+  <div class="navMenuSecondRow">
+
+
+      <a class="navLinks" href="/users/new">Volunteer</a>
+      <a class="navLinks" href="https://www.beaminglove.org/contact">Contact Info</a>
+
+  </div>
+  </div>
+  </div>
+</nav>
 <body>
-  <nav>
-    <div class="navBar">
-      <div class="navImg">
-        <a href="https://www.beaminglove.org/"><img src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" style="width:100%;" alt=""></a>
-      </div>
-
-      <div class="navMenu">
-        <div class="navMenuFirstRow">
-
-        <a href="#">Upcoming Events</a>
-        <a href="#">Presenters</a>
-    </div>
-
-    <div class="navMenuSecondRow">
-
-
-        <a href="/users/new">Volunteer with us</a>
-        <a href="#">Contact Info</a>
-      </div>
-
-      </div>
-
-      <div class="navSignIn">
-
-
-
-                  <a style="padding-right: 10px;" href="/sessions/new">Current members log in</a>
-
-
-
-        <img style="width:25%;" src="https://i.pinimg.com/originals/0d/3b/7a/0d3b7af79ad2b163f759eed5937cd764.png" alt=""> <a href="https://www.facebook.com/RisingLightStPete/"></a>
-      </div>
-
-    </div>
-    </nav>
     <div class="signUpContainer">
       <div class="">
 
         <h1>Thank you for your awesomeness!</h1>
         <h2>Just fill out the form below, and we'll be in contact as soon as we can!</h2>
         <form action="/users" method="POST">
-          <label for="name">User Name:</label>
-          <input type="text" name="username" required/><br><br>
+
+          <label for="username">User Name:</label>
+          <input type="text" name="username"/><br><br>
 
           <label for="password">Create a password:</label>
-          <input type="text" name="password" required/>
+          <input type="text" name="password"/>
           <br><br>
 
-          <label for="name">Your full name:</label>
-          <input type="text" name="phone" />
+          <label for="firstName">Your first name:</label>
+          <input type="text" name="firstName" />
+          <br><br>
+
+          <label for="lastName">Your last name:</label>
+          <input type="text" name="lastName" />
           <br><br>
 
           <label for="pronoun">Preferred pronoun:</label>
@@ -69,18 +63,14 @@
           <br><br>
 
           <label for="about">If you have a moment, tell us about yourself. Are there any particular area of interest in which you'd like to help out?:</label><br>
-          <textarea type="about" name="about"> </textarea>
+          <textarea type="text" name="about"> </textarea>
           <br><br>
 
-          <label for="role">role:</label>
-          <input type="text" name="role" />
-          <br><br>
-
-          <input type="submit" value="Submit">
-          <form>
+          <input type="submit" value="Submit"/>
+        </form>
           </div>
           <div class="signUpImg">
-            <img style="width:100%" src="" alt="">
+            <img style="width:50%" src="https://cdn.shopify.com/s/files/1/0367/6021/products/Artistic_Thank_You_Detail_1024x1024.jpg?v=1559325885" alt="">
 
           </div>
         </div>

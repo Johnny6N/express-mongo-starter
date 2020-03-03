@@ -1,6 +1,6 @@
 <div class="navBar">
   <div class="navImg">
-    <a href="https://www.beaminglove.org/"><img src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" style="width:100%;" alt=""></a>
+    <a href="https://www.beaminglove.org/"><img style="border-radius: 20px; width:100%;" src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" style="width:100%;" alt=""></a>
   </div>
 
   <div class="navMenu">
@@ -16,23 +16,24 @@
 
     <a class="navLinks" href="/users/new">Volunteer</a>
     <a class="navLinks" href="https://www.beaminglove.org/contact">Contact Info</a>
-  </div>
+  <!-- </div> -->
+  <% if (currentUser) { %>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="Log Out"/>
+            </form>
+        <% } else { %>
+            <a class="navLinks" href="/sessions/new">Log In</a>
+          <% } %>
+  <!-- </div> -->
+</div>
+</div>
+</div>
 
-  </div>
-
-  <div class="navSignIn">
+  <!-- <div class="navSignIn"> -->
     <% if (currentUser) { %>
             <h4 style="padding-right: 10px;">Welcome, <%= currentUser.username %>!</h4>
-              <form action="/sessions?_method=DELETE" method="POST">
-                <input style="margin-right: 10px;" class="button" type="submit" value="Log Out"/>
-              </form>
-          <% } else { %>
-              <a class="navLinks" href="/sessions/new">Log In</a>
             <% } %>
 
-  </div>
-
-</div>
 
 <!-- _tags: [{mongoose.Schema.Types.ObjectId, ref :"Tags"}]
 type: string, enum ['admin, '] -->
