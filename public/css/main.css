@@ -1,7 +1,163 @@
 * {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.indexShopImgs {
-  width: 200px;
+/* font-family: 'Josefin Sans', ;
+font-family: 'Lobster', ;
+font-family: 'Indie Flower', ; */
+
+
+body {
+  background-image: url('https://storage.needpix.com/rsynced_images/grunge-effect-background-14544903456kx.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: green;
+  color: white;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navLinks:link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.navLinks:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.navLinks:hover{
+  color: yellow;
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+
+
+
+.navImg {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.navMenuFirstRow, .navMenuSecondRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navSignIn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  text-align: right;
+  margin: 5px;
+}
+
+.facebookLink {
+  width: 25%;
+  display: flex;
+  }
+
+.welcomeContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Josefin Sans';
+}
+
+.currentShops {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.eachShop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  background-color: rgba(137, 207, 240, 0.5);
+  color: black;
+  font-family: 'Indie Flower';
+  padding: 5px;
+  margin: 5px;
+  text-align: center
+}
+
+.illuminationDescription {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 5px;
+}
+
+.illuminationDescription-1, .illuminationDescription-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-align: justify;
+}
+
+.risingLightDescription {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 5px;
+}
+
+.risingLightDescription-1, .risingLightDescription-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-align: justify;
+}
+
+.showPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoButton {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: Lobster;
+	font-size:15px;
+	padding:10px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.infoButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.infoButton:active {
+	position:relative;
+	top:1px;
 }

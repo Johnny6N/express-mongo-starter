@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+  <body>
+<form action="/shops/<%=shop.id%>/edit?_method=PUT" method="POST">
+  <!-- <h4>The shop Id is <%= shop.id %></h4> -->
+    Event: <input type="text" name="event" value="<%= shop.event %>"><br><br>
+    Shop title: <input type="text" name="title" value="<%= shop.title %>"><br><br>
+    Host: <input type="text" name="host" value="<%= shop.host %>"><br><br>
+    Host Bio: <br><textarea name="hostBio" rows="8" cols="80"> <%= shop.hostBio %></textarea><br><br>
+    Short description for main page: <input type="text" name="shortInfo" value="<%= shop.shortInfo %>"><br><br>
+    Longer description for shop details: <br><textarea name="longInfo" rows="8" cols="80"><%= shop.longInfo %></textarea><br><br>
+    Day: <input type="text" name="day" value="<%= shop.day %>"><br><br>
+    Date: <input type="text" name="date" value="<%= shop.date %>"><br><br>
+    Start time: <input type="text" name="startTime" value="<%= shop.startTime %>"><br><br>
+    End time: <input type="text" name="endTime" value="<%= shop.endTime %>"><br><br>
+    Location: <input type="text" name="location" value="<%= shop.location %>"><br><br>
+    Price: <input type="text" name="price" value="<%= shop.price %>"><br><br>
+    Shop image: <input type="text" name="img" value="<%= shop.img %>"><br><br>
+    <input type="submit" value="Submit Changes"/>
+  </form>
+  </body>
+</html>

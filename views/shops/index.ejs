@@ -7,42 +7,50 @@
     <%- include ('../partials/nav.ejs') %>
   </nav>
   <body>
-    <h1>Hello! Welcome to the Rising Light app,</h1>
-    <h1> brought to you by The Illumi-Nation Project!</h1>
 
+    <div class="welcomeContainer">
+      <h1>Hello! Welcome to the Rising Light app, brought to you by The Illumi-Nation Project!</h1>
     <!-- Have the event name be entered in? -->
-    <h2>Current Woke & Play shop schedule:</h2>
-
+      <h2>Current Woke & Play shop schedule:</h2>
+    </div>
     <div class="currentShops">
-      <ul>
       <% for (let i = 0; i < shops.length; i++) { %>
         <div class="eachShop">
-          <li>
-            Shop: <%= shops[i].shop %><br>
-            Host: <%= shops[i].host %><br>
-            Info: <%= shops[i].info %><br>
+            Shop: <%= shops[i].title %><br>
+            Host: <%= shops[i].host %><br><br>
+              <img style="width:100%;" src="<%= shops[i].img %>" alt=""><br>
+            About: <%= shops[i].shortInfo %><br>
             Day: <%= shops[i].day %>, <%= shops[i].date %><br>
             Time: <%= shops[i].startTime %> to <%= shops[i].endTime %><br>
             Location: <%= shops[i].location %><br>
-            Price: <%= shops[i].price %><br>
-            <img class="indexShopImgs" src="<%= shops[i].img %>" alt="">
-          </li>
+            Price: <%= shops[i].price %><br><br>
+            <a class="infoButton" href="/shops/<%= shops[i].id %>">Click here for more info!</a>
         </div>
       <% } %>
-    </ul>
 
     </div>
+    <% if (currentUser && currentUser.role === 'admin') { %>
+    <button><a href="/shops/new">Create new Woke/Play shop listing</a></button>
+    <button><a href="/shops/userindex">User info/permissions</a></button>
+    <% } %>
     <div class="organizationDescriptions">
       <div class="illuminationDescription">
+        <div class="illuminationDescription-1"
         <h3>The Illumination Project</h3>
-        <p>We are a St. Petersburg, FL-based federally recognized 501 (c.)(3) not-for-profit organization.</p>
-        <p>Our mission is to offer holistic, experiential education for children and adults related to environmental sustainability, personal growth, and creative self-expression.</p>
-        <p>We are in the development stages of creating a Hands-On Holistic Wellness & Environmental Education Center in St. Petersburg for children and adults.</p>
+      </div>
+      <div class="illuminationDescription-2">
+        <p>We are a St. Petersburg, FL-based federally recognized 501 (c.)(3) not-for-profit organization. Our mission is to offer holistic, experiential education for children and adults related to environmental sustainability, personal growth, and creative self-expression. We are in the development stages of creating a Hands-On Holistic Wellness & Environmental Education Center in St. Petersburg for children and adults.</p>
         <p>Currently, we have two community outreach programs: Rising Light and Paint at The Patch<p>
-        <a href="#">Learn more about our research!</a>
+        <a class="navLinks" href="https://www.beaminglove.org/about-us">Learn more about our research!</a>
+      </div>
       </div>
       <div class="risingLightDescription">
-        <p>Rising Light is our community outreach program. Our group of volunteers, educators and spiritual leaders travel to music festivals and other events to provide interactive classes and PLAYshops that promote sustainability, social empowerment, community enrichment, and personal growth.</p>
+        <div class="risingLightDescription-1">
+          <h3>Rising Light</h3>
+        </div>
+        <div class="risingLightDescription-2">
+          <p>Rising Light is our community outreach program. Our group of volunteers, educators and spiritual leaders travel to music festivals and other events to provide interactive classes and PLAYshops that promote sustainability, social empowerment, community enrichment, and personal growth.</p>
+        </div>
       </div>
     </div>
   </body>

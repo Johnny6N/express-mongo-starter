@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+  <body>
+
+
+    <div class="currentUsers">
+      <% for (let i = 0; i < user.length; i++) { %>
+        <div class="eachuser">
+            Username: <%= user[i].username %><br>
+            Phone number: <%= user[i].phone %><br>
+            Email: <%= user[i].email %><br>
+            About: <%= user[i].about %><br>
+            Role: <%= user[i].role %><br>
+            <form action="/shops/<%= user[i].id; %>/deleteuser?_method=DELETE" method="POST">
+              <input class="button" type="submit" value="DELETE"/>
+              <button><a href="/shops/<%= user[i].id;%>/edituser">Edit</a></button><br><br>
+            </form>
+        </div>
+      <% } %>
+
+    </div>
+
+  </body>
+</html>

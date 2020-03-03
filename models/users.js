@@ -3,7 +3,16 @@ const Schema = mongoose.Schema
 
 const userSchema = Schema({
   username: { type: String, unique: true, required: true },
-  password: String
+  password: String,
+  name: String,
+  pronoun: String,
+  phone: String,
+  email: String,
+  about: String,
+  role: {
+    type: String,
+    enum: ['volunteer', 'presenter', 'admin'],
+    default: 'volunteer'}
 })
 
 const User = mongoose.model('User', userSchema)

@@ -1,13 +1,14 @@
 const express = require('express')
-const Shops = require('../models/shops.js')
+const Shop = require('../models/shop.js')
+const User = require('../models/users.js')
 const shops = express.Router()
-// const isAuthenticated = (req, res, next) => {
-//   if (req.session.currentUser) {
-//     return next()
-//   } else {
-//     res.redirect('/sessions/new')
-//   }
-// }
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
 
 /*
 ***************************
@@ -17,29 +18,40 @@ const shops = express.Router()
 
 // Index:
 shops.get('/', (req, res) => {
-  Shops.find({}, (error, allshops) => {
+  Shop.find({}, (error, allshops) => {
     res.render('shops/index.ejs', {
-      shops: allshops
-      // ,currentUser: req.session.currentUser
+      shops: allshops,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// User index:
+shops.get('/userindex', (req, res) => {
+  User.find({}, (error, allUsers) => {
+    res.render('shops/userindex.ejs', {
+      user: allUsers,
+      currentUser: req.session.currentUser
     })
   })
 })
 
 // New:
-shops.get('/new', /* isAuthenticated,*/ (req, res) => {
-  res.render('new.ejs'
-  // , {currentUser:
-  //   req.session.currentUser}
-)
+shops.get('/new', isAuthenticated, (req, res) => {
+  res.render('shops/new.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 shops.get('/seed', (req, res) => {
-  Shops.create([
+  Shop.create([
     {
       event: `Hometeam New Year\'s Rally 2019`,
-      shop: 'Acro Yoga',
+      title: 'Acro Yoga',
       host: 'Kaleigh Duncan',
-      info: 'Learn to do acro yoga!',
+      hostBio: 'This is all about Kaleigh Duncan',
+      shortInfo: 'Learn to do acro yoga!',
+      longInfo: 'This is even more information about the woke/play shop!',
       day: 'Saturday',
       date: '12/28/19',
       // (can I do the regexp with this?)
@@ -51,9 +63,11 @@ shops.get('/seed', (req, res) => {
     },
     {
       event: 'Hometeam',
-      shop: 'Flow Jam Skill Share',
+      title: 'Flow Jam Skill Share',
       host: 'Jordan Smith',
-      info: 'BYO hoops & Flow Toys',
+      hostBio: 'This is all about Jordan Smith',
+      shortInfo: 'BYO hoops & Flow Toys',
+      longInfo: 'This is even more information about the woke/play shop!',
       day: 'Sunday',
       date: '12/29/19',
       // (can I do the regexp with this?)
@@ -66,9 +80,11 @@ shops.get('/seed', (req, res) => {
     },
     {
       event: 'Hometeam',
-      shop: 'Life on the Road - Secrets to Full-Time RV Living',
+      title: 'Life on the Road - Secrets to Full-Time RV Living',
       host: 'Kasandra & Johnny',
-      info: 'Learn all about living on the road!',
+      hostBio: 'This is all about Kasandra & Johnny',
+      shortInfo: 'Learn all about living on the road!',
+      longInfo: 'This is even more information about the woke/play shop!',
       day: 'Sunday',
       date: '12/29/19',
       // (can I do the regexp with this?)
@@ -85,25 +101,34 @@ shops.get('/seed', (req, res) => {
 });
 
 // Show:
-shops.get('/:id', /* isAuthenticated,*/ (req, res) => {
-  Shops.findById(req.params.id, (err, foundShop) => {
+shops.get('/:id', (req, res) => {
+  Shop.findById(req.params.id, (err, foundShop) => {
     res.render('shops/show.ejs', {
-      shop: foundShop
-      // ,currentUser: req.session.currentUser
+      shop: foundShop,
+      currentUser: req.session.currentUser
     })
   })
 })
 
 // Edit:
-shops.get('/:id/edit', /* isAuthenticated, */ (req, res) => {
-  Shops.findById(req.params.id, (err, foundShop) => {
+shops.get('/:id/edit', isAuthenticated, (req, res) => {
+  Shop.findById(req.params.id, (err, foundShop) => {
     res.render('shops/edit.ejs', {
-      log: foundShop
-      // ,currentUser: req.session.currentUser
+      shop: foundShop,
+      currentUser: req.session.currentUser
     })
   })
 })
 
+// Edit:
+shops.get('/:id/edituser', isAuthenticated, (req, res) => {
+  User.findById(req.params.id, (err, foundUser) => {
+    res.render('shops/edituser.ejs', {
+      user: foundUser,
+      currentUser: req.session.currentUser
+    })
+  })
+})
 /*
 ***************************
   Functional Routes
@@ -111,38 +136,47 @@ shops.get('/:id/edit', /* isAuthenticated, */ (req, res) => {
 */
 
 // Create:
-shops.post('/', /* isAuthenticated,*/ (req, res) => {
-  // if (req.body.shipIsBroken === 'on') {
-  //   req.body.shipIsBroken = true;
-  // } else {
-  //   req.body.shipIsBroken = false;
-  // }
-  Shops.create(req.body, (error, createdshop) => {
+shops.post('/', isAuthenticated, (req, res) => {
+  Shop.create(req.body, (error, createdShop) => {
     res.redirect('/shops');
   });
 });
 
 // Update
-shops.put('/:id', /* isAuthenticated,*/ (req, res) => {
-  // if (req.body.shipIsBroken === 'on') {
-  //   req.body.shipIsBroken = true
-  // } else {
-  //   req.body.shipIsBroken = false
-  // }
-  Shops.findByIdAndUpdate(
+shops.put('/:id/edit', isAuthenticated, (req, res) => {
+  Shop.findByIdAndUpdate(
     req.params.id,
     req.body,
     {new:true},
-    (err, updatedshop) => {
+    (err, foundShop) => {
       res.redirect(`/shops`)
     }
   )
 })
 
+// Update User:
+shops.put('/:id/edituser', isAuthenticated, (req, res) => {
+  User.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new:true},
+    (err, foundUser) => {
+      res.redirect(`/shops/userindex`)
+    }
+  )
+})
+
 // Delete
-shops.delete('/:id', /* isAuthenticated, */ (req, res) => {
-  Shops.findByIdAndRemove(req.params.id, (err, deletedshop)=>{
+shops.delete('/:id', isAuthenticated, (req, res) => {
+  Shop.findByIdAndRemove(req.params.id, (err, deletedShop)=>{
         res.redirect('/shops');
+      })
+})
+
+// Delete
+shops.delete('/:id/deleteuser', isAuthenticated, (req, res) => {
+  User.findByIdAndRemove(req.params.id, (err, deletedUser)=>{
+        res.redirect('/shops/userindex');
       })
 })
 

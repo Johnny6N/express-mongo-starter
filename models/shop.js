@@ -1,10 +1,12 @@
 const mongoose = require('mongoose')
 
-const shopsSchema = new mongoose.Schema({
+const shopSchema = new mongoose.Schema({
   event: String,
-  shop: String,
+  title: String,
   host: String,
-  info: String,
+  hostBio: String,
+  shortInfo: String,
+  longInfo: String,
   day: String,
   date: String,
   // (can I do the regexp with this?)
@@ -18,6 +20,6 @@ const shopsSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Shops = mongoose.model('Shops', shopsSchema)
+const Shop = mongoose.model('Shop', shopSchema)
 
-module.exports = Shops;
+module.exports = Shop;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+
+  <body>
+<h2>Create new Woke&Play shop</h2>
+<form action="/shops" method="POST">
+    Event: <input type="text" name="event" placeholder="Name of event"><br><br>
+    Shop title: <input type="text" name="title" placeholder="Name of Woke&Play Shop"><br><br>
+    Host: <input type="text" name="host" placeholder="Presenter's's name"><br><br>
+    Host Bio: <br><textarea name="hostBio" rows="8" cols="80" placeholder="About the host"></textarea><br><br>
+    Short description for main page: <input type="text" name="shortInfo" placeholder="Short description for main page"><br><br>
+    Longer description for shop details: <br><textarea name="longInfo" rows="8" cols="80" placeholder="Longer description for shop details"></textarea><br><br>
+    Day: <input type="text" name="day" placeholder="I.e., Monday, Tuesday..."><br><br>
+    Date: <input type="text" name="date" placeholder="mm/dd/yyyy"><br><br>
+    Start time: <input type="text" name="startTime" placeholder="0:00"><br><br>
+    End time: <input type="text" name="endTime" placeholder="0:00 am/pm"><br><br>
+    Location: <input type="text" name="location" placeholder="At the stage, in the field, etc."><br><br>
+    Price: <input type="text" name="price" placeholder="Free? Is there a materials cost?"><br><br>
+    Shop image: <input type="text" name="img" placeholder="enter url (https://example.com/example.jpg)"><br><br>
+    <input type="submit" value="Submit"/>
+  </form>
+  </body>
+</html>

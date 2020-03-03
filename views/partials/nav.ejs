@@ -1,18 +1,39 @@
 <div class="navBar">
   <div class="navImg">
-    <a href="https://www.beaminglove.org/"><img src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" alt=""></a>
+    <a href="https://www.beaminglove.org/"><img src="https://static.wixstatic.com/media/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.png/v1/fill/w_996,h_278,al_c,lg_1,q_85/74e27e_0d385d407668489d8829ae7c6ba41ac4~mv2.webp" style="width:100%;" alt=""></a>
   </div>
 
   <div class="navMenu">
-    <a href="#">Upcoming Events</a>
-    <a href="#">Woke & Play shops</a>
-    <a href="#">Presenters</a>
-    <a href="#">Volunteer with us</a>
-    <a href="#">Contact Info</a>
+    <div class="navMenuFirstRow">
+
+    <a class="navLinks" href="https://www.facebook.com/pg/Illumi.Nation.proj/events/?ref=page_internal">Upcoming Events</a>
+    <a class="navLinks" href="/shops">Home</a>
+    <a class="navLinks" href="#">Presenters</a>
+</div>
+
+<div class="navMenuSecondRow">
+
+
+    <a class="navLinks" href="/users/new">Volunteer</a>
+    <a class="navLinks" href="https://www.beaminglove.org/contact">Contact Info</a>
+  </div>
+
   </div>
 
   <div class="navSignIn">
-    <a href="#">Sign In</a>
+    <% if (currentUser) { %>
+            <h4 style="padding-right: 10px;">Welcome, <%= currentUser.username %>!</h4>
+              <form action="/sessions?_method=DELETE" method="POST">
+                <input style="margin-right: 10px;" class="button" type="submit" value="Log Out"/>
+              </form>
+          <% } else { %>
+              <a class="navLinks" href="/sessions/new">Log In</a>
+            <% } %>
+
+    <img class="facebookLink" src="https://i.pinimg.com/originals/0d/3b/7a/0d3b7af79ad2b163f759eed5937cd764.png" alt=""> <a href="https://www.facebook.com/RisingLightStPete/"></a>
   </div>
 
 </div>
+
+<!-- _tags: [{mongoose.Schema.Types.ObjectId, ref :"Tags"}]
+type: string, enum ['admin, '] -->

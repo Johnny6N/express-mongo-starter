@@ -1,1 +1,34 @@
-This is the show page
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <%- include ('../partials/head.ejs') %>
+</head>
+<nav>
+  <%- include ('../partials/nav.ejs') %>
+</nav>
+<body>
+  <body>
+    <div class="showPageContainer">
+      <ul>
+
+      <li> Shop: <%= shop.title %></li>
+      <li>Host: <%= shop.host %></li>
+      <li><%= shop.hostBio %></li>
+      <li><%= shop.longInfo %></li>
+      <li>Day: <%= shop.day %>, <%= shop.date %></li>
+      <li>Time: <%= shop.startTime %> to <%= shop.endTime %></li>
+      <li>Location: <%= shop.location %></li>
+      <li>Price: <%= shop.price %></li>
+    </ul>
+
+      <img style="width:100%;" src="<%= shop.img %>" alt=""><br>
+<% if (currentUser && currentUser.role === 'admin') { %>
+      <form action="/shops/<%= shop.id; %>?_method=DELETE" method="POST">
+        <input class="button" type="submit" value="DELETE"/>
+        <!-- </form> -->
+        <button><a href="/shops/<%= shop.id;%>/edit">Edit</a></button>
+      </form>
+<% } %>
+    </div>
+  </body>
+</html>
