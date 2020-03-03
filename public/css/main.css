@@ -21,24 +21,38 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-image: url('https://t4.ftcdn.net/jpg/01/38/69/35/240_F_138693516_xEc0xs2qKXXA1S2rgScAlMtQlRQAozYc.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
 }
 
 .navLinks:link {
-  color: white;
-  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
+  border: 2px solid black;
+/* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
   font-size: 1em;
+  border-radius: 10px;
+  margin: 5px 5px;
+  cursor: pointer;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
 }
 
 .navLinks:visited {
   color: white;
   text-decoration: none;
   font-size: 1em;
+  border: 2px solid black;
 }
 
 .navLinks:hover{
   color: yellow;
   font-size: 1.2em;
   transition: 0.5s;
+  border: 2px solid black;
 }
 
 
@@ -46,34 +60,37 @@ body {
 .navImg {
   display: flex;
   justify-content: flex-start;
-  width: 25%;
+  width: 35%;
+  border-radius: 20px;
+  margin-left: 5px;
 }
 
 .navMenu {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 55%;
   justify-content: space-around;
-  margin: 15px;
+  margin: 0 15px;
 }
 
 .navMenuFirstRow, .navMenuSecondRow {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
 }
 .navSignIn {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 25%;
+  width: 10%;
   text-align: right;
-  margin: 5px;
+  margin: 0 5px;
 }
 
 .facebookLink {
-  width: 25%;
+  width: 5%;
   display: flex;
   }
 
@@ -160,4 +177,8 @@ body {
 .infoButton:active {
 	position:relative;
 	top:1px;
+}
+
+.button {
+  
 }
