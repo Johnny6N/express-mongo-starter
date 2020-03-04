@@ -33,7 +33,7 @@ body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1.2em;
+  font-size: 1.6em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -66,13 +66,13 @@ input[type=submit]:hover{
 .navLinks:visited {
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.6em;
   border: 2px solid black;
 }
 
 .navLinks:hover{
   color: yellow;
-  font-size: 1.5em;
+  font-size: 1.8em;
   transition: 0.5s;
   border: 2px solid black;
 }
