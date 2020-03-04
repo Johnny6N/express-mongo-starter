@@ -174,13 +174,6 @@ input[type=submit]:hover{
   box-shadow: 2px 2px 5px black;
 }
 
-.illuminationDescription-1, .illuminationDescription-2 {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  text-align: justify;
-}
-
 .risingLightDescription {
   display: flex;
   flex-direction: row;
@@ -195,11 +188,15 @@ input[type=submit]:hover{
   box-shadow: 2px 2px 5px black;
 }
 
-.risingLightDescription-1, .risingLightDescription-2 {
-  display: flex;
-  flex-direction: column;
+.risingLightDescription-1, .illuminationDescription-1 {
+  width: 20%;
   margin: 10px;
+}
+
+.risingLightDescription-2, .illuminationDescription-2 {
   text-align: justify;
+  width: 80%;
+  margin: 10px;
 }
 
 .showPageContainer {
