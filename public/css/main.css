@@ -233,6 +233,27 @@ input[type=submit]:hover{
 	top:1px;
 }
 
+.researchLink {
+  ackground-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
+  border: 2px solid black;
+/* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
+  font-size: 1em;
+  border-radius: 5px;
+  margin: 5px 0px;
+  cursor: pointer;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.researchLink:hover{
+  color: yellow;
+  font-size: 1.2em;
+  transition: 0.5s;
+  border: 2px solid black;
+}
+
 .signUpImg {
   display: inline-block;
   border-radius: 50px;
