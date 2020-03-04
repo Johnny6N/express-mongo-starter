@@ -252,7 +252,15 @@ input[type=submit]:hover{
 }
 
 .signUpImg {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   border-radius: 50px;
   margin: auto;
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
