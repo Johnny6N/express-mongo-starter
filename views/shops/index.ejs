@@ -29,11 +29,19 @@
       <% } %>
 
     </div>
-    <h2>Like us on Facebook!<img class="facebookLink" src="https://i.pinimg.com/originals/0d/3b/7a/0d3b7af79ad2b163f759eed5937cd764.png" alt=""> <a href="https://www.facebook.com/RisingLightStPete/"></a></h2>
+    <h2>Like us on Facebook!
+      <a href="https://www.facebook.com/RisingLightStPete/">
+        <img class="facebookLink" src="https://i.pinimg.com/originals/0d/3b/7a/0d3b7af79ad2b163f759eed5937cd764.png">
+      </a>
+    </h2>
+
     <% if (currentUser && currentUser.role === 'admin') { %>
     <a class="navLinks" href="/shops/new">Create new Woke/Play shop listing</a>
     <a class="navLinks" href="/shops/userindex">User info/permissions</a>
     <% } %>
+    <br>
+    <hr>
+    <br>
         <div class="organizationDescriptions">
       <div class="illuminationDescription">
         <div class="illuminationDescription-1"

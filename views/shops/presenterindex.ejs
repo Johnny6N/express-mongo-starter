@@ -19,7 +19,7 @@
             <img class="presenterImage" src="<%= presenter[i].img %>" alt="">
             <br>
 
-            <% if ((currentUser) && (currentUser.firstName && currentUser.lastName) === (presenter[i].firstName && presenter[i].lastName)) { %>
+            <% if ((currentUser) && ((currentUser.firstName && currentUser.lastName) === (presenter[i].firstName && presenter[i].lastName)) || currentUser && currentUser.role === 'admin') { %>
             <form action="/shops/<%= presenter[i].id; %>/deletepresenter?_method=DELETE" method="POST">
               <input class="button" type="submit" value="DELETE"/>
               <a class="navLinks" style="font-family: 'Josefin Sans';" href="/shops/<%= presenter[i].id;%>/editpresenter">Edit</a><br><br>

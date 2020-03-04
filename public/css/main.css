@@ -33,7 +33,7 @@ body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1em;
+  font-size: 1.2em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -47,7 +47,7 @@ input[type=submit] {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 0.9em;
+  font-size: 1.2em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -59,20 +59,20 @@ input[type=submit] {
 
 input[type=submit]:hover{
   color: yellow;
-  font-size: 1.2em;
+  font-size: 1.4em;
   transition: 0.5s;
 }
 
 .navLinks:visited {
   color: white;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.2em;
   border: 2px solid black;
 }
 
 .navLinks:hover{
   color: yellow;
-  font-size: 1.2em;
+  font-size: 1.4em;
   transition: 0.5s;
   border: 2px solid black;
 }
@@ -101,15 +101,6 @@ input[type=submit]:hover{
   align-items: center;
   justify-content: flex-end;
 }
-/* .navSignIn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 10%;
-  text-align: right;
-  margin: 0 5px;
-} */
 
 .facebookLink {
   width: 5%;
@@ -140,6 +131,7 @@ input[type=submit]:hover{
   border-radius: 20px;
   color: black;
   font-family: 'Indie Flower';
+  font-size: 1.2em;
   padding: 5px;
   margin: 5px;
   text-align: center;
@@ -160,11 +152,26 @@ input[type=submit]:hover{
   align-items: flex-start;
 }
 
+.organizationDescriptions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .illuminationDescription {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
   margin: 5px;
+  font-family: 'Josefin Sans';
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: 85%;
+  border: 1px solid white;
+  box-shadow: 2px 2px 5px black;
 }
 
 .illuminationDescription-1, .illuminationDescription-2 {
@@ -177,8 +184,15 @@ input[type=submit]:hover{
 .risingLightDescription {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
   margin: 5px;
+  font-family: 'Josefin Sans';
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: 85%;
+  border: 1px solid white;
+  box-shadow: 2px 2px 5px black;
 }
 
 .risingLightDescription-1, .risingLightDescription-2 {
