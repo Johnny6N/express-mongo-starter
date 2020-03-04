@@ -33,7 +33,7 @@ body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1.2em;
+  font-size: 1.5em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -47,7 +47,7 @@ input[type=submit] {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1.2em;
+  font-size: 1.5em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -59,20 +59,20 @@ input[type=submit] {
 
 input[type=submit]:hover{
   color: yellow;
-  font-size: 1.4em;
+  font-size: 1.7em;
   transition: 0.5s;
 }
 
 .navLinks:visited {
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.5em;
   border: 2px solid black;
 }
 
 .navLinks:hover{
   color: yellow;
-  font-size: 1.4em;
+  font-size: 1.7em;
   transition: 0.5s;
   border: 2px solid black;
 }
@@ -131,7 +131,7 @@ input[type=submit]:hover{
   border-radius: 20px;
   color: black;
   font-family: 'Indie Flower';
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding: 5px;
   margin: 5px;
   text-align: center;
@@ -166,7 +166,7 @@ input[type=submit]:hover{
   align-items: center;
   margin: 5px;
   font-family: 'Josefin Sans';
-  font-size: 1.2em;
+  font-size: 1.5em;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 85%;
@@ -187,24 +187,12 @@ input[type=submit]:hover{
   align-items: center;
   margin: 5px;
   font-family: 'Josefin Sans';
-  font-size: 1.2em;
+  font-size: 1.5em;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 85%;
   border: 1px solid white;
   box-shadow: 2px 2px 5px black;
-}
-
-@media only screen and (max-width: 1081px) {
-  .risingLightDescription {
-    font-size: 2.0em;
-  }
-  .navLinks:link {
-    font-size: 2.0em;
-  }
-  body {
-    background-color: lightblue;
-  }
 }
 
 .risingLightDescription-1, .risingLightDescription-2 {
@@ -229,7 +217,7 @@ input[type=submit]:hover{
 	cursor:pointer;
 	color:#ffffff;
 	font-family: Lobster;
-	font-size:15px;
+	font-size: 1.0em;
 	padding:10px 10px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
@@ -237,14 +225,12 @@ input[type=submit]:hover{
 .infoButton:hover {
 	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 	background-color:#476e9e;
+  font-size: 1.2em;
+  transition: 0.5s;
 }
 .infoButton:active {
 	position:relative;
 	top:1px;
-}
-
-.button {
-
 }
 
 .signUpImg {
