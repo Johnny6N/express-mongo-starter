@@ -234,7 +234,7 @@ input[type=submit]:hover{
 }
 
 .researchLink {
-  ackground-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
   font-size: 1em;
