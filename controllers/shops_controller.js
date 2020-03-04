@@ -1,6 +1,7 @@
 const express = require('express')
 const Shop = require('../models/shop.js')
 const User = require('../models/users.js')
+const Presenter = require('../models/presenters.js')
 const shops = express.Router()
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
@@ -31,6 +32,16 @@ shops.get('/userindex', (req, res) => {
   User.find({}, (error, allUsers) => {
     res.render('shops/userindex.ejs', {
       user: allUsers,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// Presenter index:
+shops.get('/presenterindex', (req, res) => {
+  Presenter.find({}, (error, allPresenters) => {
+    res.render('shops/presenterindex.ejs', {
+      presenter: allPresenters,
       currentUser: req.session.currentUser
     })
   })
@@ -95,7 +106,31 @@ shops.get('/seed', (req, res) => {
       price: 'free',
       img: 'https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.0-9/83078981_2631508880277685_1741354650046562304_o.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_eui2=AeHJV3Mq4uCGusiKW7_Co5TDPf_jt7ePoBMGxzZCpY2MsQtUSrVkMoZtcU96uYcp-kSUcf6FhoFFGN2BiqJd0kr5nzJmhaTmTQDSMvGbcuNsVA&_nc_ohc=BzTwTl5evUcAX9DKmKy&_nc_ht=scontent.ftpa1-2.fna&oh=a3681702b57c4bbbe2994f4aa7eafd2a&oe=5EEF370B'
     }
-  ], (err, data)=>{
+  ]),
+  Presenter.create([
+    {
+      firstName: 'Neil',
+      lastName: 'Degrasse Tyson',
+      about: `I\'m the most awesome scientists alive today!`,
+      contact: '414-5512',
+      img: 'https://cdn.britannica.com/06/202006-050-64C85CC7/Neil-deGrasse-Tyson-2018.jpg'
+    },
+    {
+      firstName: 'Malala',
+      lastName: 'Yousafzai',
+      about: `Malala Yousafzai (born 12 July 1997), also known mononymously as Malala, is a Pakistani activist for female education and the youngest Nobel Prize laureate. She is known for human rights advocacy, especially the education of women and children in her native Swat Valley in Khyber Pakhtunkhwa, northwest Pakistan, where the local Taliban had at times banned girls from attending school. Her advocacy has grown into an international movement, and according to former Pakistani Prime Minister Shahid Khaqan Abbasi, she has become \"the most prominent citizen\" of the country.`,
+      contact: 'Malala@awesome.com',
+      img: 'https://i.guim.co.uk/img/media/71e47ac5c329f1dee00625259c39d7ca4f627552/0_107_8422_5054/master/8422.jpg?width=300&quality=85&auto=format&fit=max&s=5eef9c25065c5484909a6a3b999c973e'
+    },
+    {
+      firstName: 'Elon',
+      lastName: 'Musk',
+      about: `Elon Reeve Musk (born June 28, 1971) is an engineer, industrial designer, and technology entrepreneur. He is a citizen of South Africa, Canada, and the United States (where he has lived most of his life and currently resides), and is the founder, CEO and chief engineer/designer of SpaceX; co-founder, CEO and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI. He was elected a Fellow of the Royal Society (FRS) in 2018. In December 2016, he was ranked 21st on the Forbes list of The World\'s Most Powerful People, and was ranked joint-first on the Forbes list of the Most Innovative Leaders of 2019. He has a net worth of $44.2 billion and is listed by Forbes as the 20th-richest person in the world. He is the longest tenured CEO of any automotive manufacturer globally.`,
+      contact: 'outer@space.com',
+      img: 'https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2019/12/0/0/Elon-Musk-AP.jpg?ve=1&tl=1'
+    }
+  ],
+      (err, data)=>{
         res.redirect('/shops');
     })
 });
@@ -120,7 +155,7 @@ shops.get('/:id/edit', isAuthenticated, (req, res) => {
   })
 })
 
-// Edit:
+// Edit User:
 shops.get('/:id/edituser', isAuthenticated, (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
     res.render('shops/edituser.ejs', {
@@ -129,6 +164,17 @@ shops.get('/:id/edituser', isAuthenticated, (req, res) => {
     })
   })
 })
+
+// Edit Presenter:
+shops.get('/:id/editpresenter', isAuthenticated, (req, res) => {
+  Presenter.findById(req.params.id, (err, foundPresenter) => {
+    res.render('shops/editpresenter.ejs', {
+      presenter: foundPresenter,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
 /*
 ***************************
   Functional Routes
@@ -166,6 +212,18 @@ shops.put('/:id/edituser', isAuthenticated, (req, res) => {
   )
 })
 
+// Update User:
+shops.put('/:id/editpresenter', isAuthenticated, (req, res) => {
+  Presenter.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new:true},
+    (err, foundPresenter) => {
+      res.redirect(`/shops/presenterindex`)
+    }
+  )
+})
+
 // Delete
 shops.delete('/:id', isAuthenticated, (req, res) => {
   Shop.findByIdAndRemove(req.params.id, (err, deletedShop)=>{
@@ -173,10 +231,17 @@ shops.delete('/:id', isAuthenticated, (req, res) => {
       })
 })
 
-// Delete
+// Delete User:
 shops.delete('/:id/deleteuser', isAuthenticated, (req, res) => {
   User.findByIdAndRemove(req.params.id, (err, deletedUser)=>{
         res.redirect('/shops/userindex');
+      })
+})
+
+// Delete Presenter:
+shops.delete('/:id/deletepresenter', isAuthenticated, (req, res) => {
+  Presenter.findByIdAndRemove(req.params.id, (err, deletedPresenter)=>{
+        res.redirect('/shops/presenterindex');
       })
 })
 

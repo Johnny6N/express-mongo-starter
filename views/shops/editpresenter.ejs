@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <nav>
+    <%- include ('../partials/nav.ejs') %>
+  </nav>
+  <body>
+<form action="/shops/<%=presenter.id%>/editpresenter?_method=PUT" method="POST">
+    First Name: <input type="text" name="firstName" value="<%= presenter.firstName %>"><br><br>
+    Last Name: <input type="text" name="lastName" value="<%= presenter.lastName %>"><br><br>
+    About: <input type="text" name="about" value="<%= presenter.about %>"><br><br>
+    Contact: <textarea type="text" name="contact" value="<%= presenter.contact %>"></textarea><br><br>
+    Image: <input type="text" name="img" value="<%= presenter.img %>"><br><br>
+    <input type="submit" value="Submit Changes"/>
+  </form>
+  </body>
+</html>

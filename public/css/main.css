@@ -124,14 +124,14 @@ input[type=submit]:hover{
   font-family: 'Josefin Sans';
 }
 
-.currentShops {
+.currentShops, .currentPresenters {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
 }
 
-.eachShop {
+.eachShop, .eachPresenter {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -147,13 +147,17 @@ input[type=submit]:hover{
   box-shadow: 2px 2px 5px black;
 }
 
-.shopImage {
+.shopImage, .presenterImage {
   width: 90%;
   display: inline-block;
   margin: auto;
   border: 1px solid black;
   box-shadow: 4px 4px 5px black;
 
+}
+
+.currentPresenters {
+  align-items: flex-start;
 }
 
 .illuminationDescription {
