@@ -33,7 +33,7 @@ body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1.7em;
+  font-size: 1.2em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -47,7 +47,7 @@ input[type=submit] {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e9ede8), to(#0F52BA),color-stop(0.4, #1034A6));
   border: 2px solid black;
 /* Background image from https://24ways.org/2008/shiny-happy-buttons/ */
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
@@ -59,20 +59,20 @@ input[type=submit] {
 
 input[type=submit]:hover{
   color: yellow;
-  font-size: 1.7em;
+  font-size: 1.5em;
   transition: 0.5s;
 }
 
 .navLinks:visited {
   color: white;
   text-decoration: none;
-  font-size: 1.7em;
+  font-size: 1.2em;
   border: 2px solid black;
 }
 
 .navLinks:hover{
   color: yellow;
-  font-size: 1.9em;
+  font-size: 1.5em;
   transition: 0.5s;
   border: 2px solid black;
 }
@@ -131,7 +131,7 @@ input[type=submit]:hover{
   border-radius: 20px;
   color: black;
   font-family: 'Indie Flower';
-  font-size: 1.7em;
+  font-size: 1.5em;
   padding: 5px;
   margin: 5px;
   text-align: center;
@@ -160,27 +160,13 @@ input[type=submit]:hover{
     align-items: center;
 }
 
-.illuminationDescription {
+.illuminationDescription, .risingLightDescription {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 5px;
   font-family: 'Josefin Sans';
-  font-size: 1.5em;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  width: 85%;
-  border: 1px solid white;
-  box-shadow: 2px 2px 5px black;
-}
-
-.risingLightDescription {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 5px;
-  font-family: 'Josefin Sans';
-  font-size: 1.5em;
+  font-size: 1.3em;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 85%;
@@ -259,11 +245,26 @@ input[type=submit]:hover{
   width: 50%;
 }
 
-@media only screen and (max-width: 1000px) {
-  body {
-    background-color: lightblue;
-  }
-  .navImg {
-    display: none;
+@media only screen and (max-width: 720px) {
+  .navLinks:link, .navLinks:visited {
+    font-size: 1.7em;
+  },
+  .eachShop, .eachPresenter {
+    font-size: 1.7em;
+  },
+  input[type=submit] {
+    font-size: 1.5em;
+  },
+  input[type=submit]:hover {
+    font-size: 1.7em;
+  },
+  .illuminationDescription, .risingLightDescription {
+    font-size: 1.5;
+  },
+  .infoButton, .researchLink {
+    font-size: 1em;
+  },
+  .infoButton:hover, .researchLink:hover {
+    font-size: 1.2em;
   }
 }
