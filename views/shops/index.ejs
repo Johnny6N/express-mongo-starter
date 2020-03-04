@@ -35,8 +35,10 @@
       </a>
     </h2>
 
+    <% if (currentUser && currentUser.role === 'admin') { %>
     <a class="navLinks" href="/shops/new">Create new Woke/Play shop listing</a>
     <a class="navLinks" href="/shops/userindex">User info/permissions</a>
+    <% } %>
     <br>
     <hr>
     <br>
