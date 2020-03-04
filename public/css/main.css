@@ -196,7 +196,12 @@ input[type=submit]:hover{
 }
 
 @media only screen and (max-width: 600px) {
-  .risingLightDescription {font-size: 2.0em;}
+  .risingLightDescription {
+    font-size: 2.0em;
+  }
+  .navLinks:link {
+    font-size: 2.0em;
+  }
 }
 
 .risingLightDescription-1, .risingLightDescription-2 {
